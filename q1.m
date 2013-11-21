@@ -1,6 +1,9 @@
 %{
 Author: Mehmet Koc
-Description: HMM Speech Recognition
+Date: 11/21/13
+Description: HMM Speech Recognition...
+only inference no learning, parameters are available
+implementing Viterbi's Algorithm
 %}
 close all
 clear
@@ -13,8 +16,10 @@ pi = importdata('initialStateDistribution.txt');
 T = length(Ot);
 n = length(pi);
 %compute max log-likelihood for all t=1:T
-%also save the most probable state transitions
+%L = [l1, l2, ..., lT]
 L = zeros(n, T);
+%also save the most probable state transitions
+%phi = [phi1, phi2, ..., phiT] where phi1 is not meaningful
 phi = zeros(n, T);
 l1 = log(pi) + log(B(:, Ot(1)));
 L(:, 1) = l1;
@@ -25,7 +30,7 @@ for i = 2:T
     phi(:, i) = ind';
 end
 %%
-%best state sequence
+%best hidden state sequence
 S = zeros(T, 1);
 [~, S(T)] = max(L(:, T));
 %backtracking
