@@ -41,4 +41,10 @@ end
 %decode and eliminate repetitions
 sentence = S(~isRepeated);
 alphabet = char(97:122);
-sentenceDecoded = alphabet(sentence)
+sentenceDecoded = alphabet(sentence);
+%%
+%plot the most likely sequence of hidden states vs time
+figure, plot(S, 'linewidth', 2);
+xlim([1, T]); ylim([0, n+1]);
+xlabel('Time (t=1:T)'); ylabel('Hidden state value (1 to 26)');
+title('The most likely sequence of hidden states vs. time');
