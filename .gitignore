@@ -1,0 +1,32 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+#Ignore editor generated files
+*.swp
+*.gch
+*~
+
+#Matlab files
+*.asv
+
+#VS files
+*.opensdf
+*.sdf
+*.sln
+*.suo
+*.v12.suo
+*.vcxproj
+*.vcxproj.filters
+Debug/
+
